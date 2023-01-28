@@ -37,10 +37,10 @@ IS_SANDBOX = ENVIRONMENT == "sandbox"
 IS_DEPLOYED_ENV = IS_PRODUCTION or IS_SANDBOX
 SERVER_NAME = config("EC2_INSTANCE_ID", default="unknown")
 
-ALLOWED_HOSTS = ["*"]
-CORS_ALLOW_HEADERS = ["*"]
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = ["127.0.0.1"]
+# CORS_ALLOW_HEADERS = ["*"]
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition{
 INSTALLED_APPS = [
@@ -172,36 +172,36 @@ if DEBUG:
     }
 else:
     DATABASES = {}
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+    DATABASES['default'] = dj_database_url.config()
 
-CELERY_TASK_ALWAYS_EAGER = config("CELERY_TASK_ALWAYS_EAGER", default=True, cast=bool)
-CELERY_BROKER_URL = config("CELERY_BROKER_URL")
-CELERY_RESULT_BACKEND = config("CELERY_RESULT_BACKEND")
-CELERY_ACCEPT_CONTENT = ["application/json"]
-CELERY_TASK_SERIALIZER = "json"
-CELERY_RESULT_SERIALIZER = "json"
+# CELERY_TASK_ALWAYS_EAGER = config("CELERY_TASK_ALWAYS_EAGER", default=True, cast=bool)
+# CELERY_BROKER_URL = config("CELERY_BROKER_URL")
+# CELERY_RESULT_BACKEND = config("CELERY_RESULT_BACKEND")
+# CELERY_ACCEPT_CONTENT = ["application/json"]
+# CELERY_TASK_SERIALIZER = "json"
+# CELERY_RESULT_SERIALIZER = "json"
 
 # Django-storages
-DOCUMENT_MOCK_STORAGE = config("DOCUMENT_MOCK_STORAGE", cast=bool, default=False)
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
-AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
-AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
-AWS_REGION_NAME = config("AWS_REGION_NAME")
+# DOCUMENT_MOCK_STORAGE = config("DOCUMENT_MOCK_STORAGE", cast=bool, default=False)
+# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# AWS_STORAGE_BUCKET_NAME = config("AWS_STORAGE_BUCKET_NAME")
+# AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY")
+# AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID")
+# AWS_REGION_NAME = config("AWS_REGION_NAME")
 
-REDIS_PORT = config("REDIS_PORT", 6379)
-REDIS_HOST = config("REDIS_HOST", "localhost")
+# REDIS_PORT = config("REDIS_PORT", 6379)
+# REDIS_HOST = config("REDIS_HOST", "localhost")
 
 # Django channels
-ASGI_APPLICATION = "poliwag.common.sockets.routing.application"
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [(REDIS_HOST, REDIS_PORT)],
-        },
-    }
-}
+# ASGI_APPLICATION = "poliwag.common.sockets.routing.application"
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [(REDIS_HOST, REDIS_PORT)],
+#         },
+#     }
+# }
 
 # Emails
 DEV_EMAIL_BACKEND = "poliwag.common.mailer.backends.EmailToBrowserBackend"
@@ -209,13 +209,13 @@ DEV_EMAIL_FILE_PATH = config("DEV_EMAIL_FILE_PATH", default="file:")
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "tmp", "email")
 EMAIL_BACKEND = config("EMAIL_BACKEND", default=DEV_EMAIL_BACKEND)
 
-SENDGRID_API_KEY = config("SENDGRID_API_KEY")
-EMAIL_HOST = "smtp.sendgrid.net"
-EMAIL_HOST_USER = "apikey"
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_SUPPORT_ADDRESS = 'team@poliwag.com'
+# SENDGRID_API_KEY = config("SENDGRID_API_KEY")
+# EMAIL_HOST = "smtp.sendgrid.net"
+# EMAIL_HOST_USER = "apikey"
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_SUPPORT_ADDRESS = 'team@poliwag.com'
 
 COMPANY_NAME = "poliwag"
 GENERIC_DOMAIN_NAME = config("GENERIC_DOMAIN_NAME")
@@ -226,13 +226,13 @@ AUTH_USER_MODEL = "identity.User"
 AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f"redis://{REDIS_HOST}:6379/1",
-        "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": f"redis://{REDIS_HOST}:6379/1",
+#         "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient"},
+#     }
+# }
 
 # EventProcessing
 EVENT_PROCESSING_LISTENER_REGISTRY = [
@@ -240,16 +240,16 @@ EVENT_PROCESSING_LISTENER_REGISTRY = [
 ]
 
 # Slack
-SLACK_EVENT_CHANNEL = config("SLACK_EVENT_CHANNEL", default="#bot-test")
-SLACK_BOT_TOKEN = config("SLACK_BOT_TOKEN", default=None)
-SLACK_SIGNING_SECRET = config("SLACK_SIGNING_SECRET", default=None)
-SLACK_MOCK_CLIENT = config("SLACK_MOCK_CLIENT", cast=bool, default=False)
+# SLACK_EVENT_CHANNEL = config("SLACK_EVENT_CHANNEL", default="#bot-test")
+# SLACK_BOT_TOKEN = config("SLACK_BOT_TOKEN", default=None)
+# SLACK_SIGNING_SECRET = config("SLACK_SIGNING_SECRET", default=None)
+# SLACK_MOCK_CLIENT = config("SLACK_MOCK_CLIENT", cast=bool, default=False)
 
 # Twilio
-TWILIO_MOCK_CLIENT = config("TWILIO_MOCK_CLIENT", cast=bool)
-TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID", default=None)
-TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN", default=None)
-TWILIO_PHONE_NUMBER = config('TWILIO_PHONE_NUMBER', default='+5555555555')
+# TWILIO_MOCK_CLIENT = config("TWILIO_MOCK_CLIENT", cast=bool)
+# TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID", default=None)
+# TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN", default=None)
+# TWILIO_PHONE_NUMBER = config('TWILIO_PHONE_NUMBER', default='+5555555555')
 
 # Sentry
 SENTRY_DSN = config("SENTRY_DSN", default=None)
