@@ -39,7 +39,7 @@ IS_SANDBOX = ENVIRONMENT == "sandbox"
 IS_DEPLOYED_ENV = IS_PRODUCTION or IS_SANDBOX
 SERVER_NAME = config("EC2_INSTANCE_ID", default="unknown")
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 # CORS_ALLOW_HEADERS = ["*"]
 # CORS_ALLOW_CREDENTIALS = True
 # CORS_ORIGIN_ALLOW_ALL = True
@@ -197,7 +197,7 @@ else:
 # REDIS_HOST = config("REDIS_HOST", "localhost")
 
 # Django channels
-# ASGI_APPLICATION = "poliwag.common.sockets.routing.application"
+ASGI_APPLICATION = "poliwag.common.sockets.routing.application"
 # CHANNEL_LAYERS = {
 #     "default": {
 #         "BACKEND": "channels_redis.core.RedisChannelLayer",
