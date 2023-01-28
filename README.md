@@ -76,26 +76,6 @@ https://app.poliwag.com/
 #### Sandbox environment:
 https://app.sandbox.poliwag.com/
 
-### Infrastructure:
-All infrastructure is currently hosted on AWS. The following are main components:
-- Route 53 (Hosted Zone)
-  - DNS pointers to existing infra (db, redis, etc)
-- Certificate Manger 
-  - Certs for SSL on poliwag domains
-- S3 
-  - Buckets for react app, documents, and database backups
-- Cloudfront 
-  - Currently serving S3 buckets for sandbox and production public frontends
-- EC2 
-  - Servers hosting the application (currently only one per environment).
-- Target Group
-- Load Balancer 
-  - Pointing to target group one for environment
-- RDS (Postgres) 
-  - Database for both production and sandbox environments
-- Elasticache (Redis) 
-  - Clusters for both production and sandbox
-
 ### Vendors:
 - Slack
   - Application event alerting
