@@ -1,1 +1,1 @@
-web: gunicorn backend.poliwag.wsgi
+web: gunicorn poliwag.asgi
