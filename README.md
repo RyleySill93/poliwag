@@ -56,23 +56,6 @@ The most complete tests are happy path full API on both of the main application 
 `make test-api`  
 Would recommend checking these tests out to understand the API flows from a user perspective.
 
-### Deploys
-All infrastructure is hosted in AWS  
-To deploy, you will need key to the server which you can grab 
-in the google drive as the_blueprint_key. 
-
-To deploy the backend:
-Does a git pull of branch that is deployed on server:
-`make deploy-backend`
-
-To deploy the backend with migrations and install new requirements:
-`make deploy-backend-full`
-
-To deploy the frontend:
-Frontend currently builds on the local before pushing to S3, this is optimized
-for deploy times assuming our machines are more powerful than anything we are 
-willing to pay for in the cloud atm.
-`make deploy-frontend`
 
 ### Deployed environments:
 Deployed environments are running:
