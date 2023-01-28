@@ -21,7 +21,9 @@ import dj_database_url
 from datadog import initialize, statsd
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.celery import CeleryIntegration
-from poliwag.version import VERSION
+# from poliwag.version import VERSION
+
+VERSION = '1'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
