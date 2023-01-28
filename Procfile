@@ -1,1 +1,1 @@
-web: gunicorn poliwag.asgi
+web: gunicorn poliwag.asgi:application --chdir backend
