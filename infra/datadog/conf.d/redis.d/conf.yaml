@@ -1,0 +1,15 @@
+init_config:
+
+instances:
+    # Endpoint URL from AWS console
+    - host: cache.production.poliwag.com
+      port: 6379
+      db: 6
+
+      # queues
+      keys:
+        - user_waiting
+
+      # Cache Cluster ID from AWS console
+      tags:
+          - cacheclusterid:poliwag-production-001

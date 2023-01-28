@@ -1,0 +1,17 @@
+init_config:
+
+instances:
+
+##Log section
+logs:
+  - type: file
+    path: /var/www/poliwag/backend/logs/poliwag-backend.log
+    service: poliwag-backend
+    source: python
+    sourcecategory: sourcecode
+
+  - type: file
+    path: /var/www/poliwag/backend/logs/poliwag-celery-worker.log
+    service: poliwag-celery
+    source: python
+    sourcecategory: sourcecode

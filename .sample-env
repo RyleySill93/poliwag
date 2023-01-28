@@ -1,0 +1,57 @@
+# Frontend
+REACT_APP_API_URL=http://localhost:8000
+
+# Backend
+DEBUG=True
+QUERY_DEBUG=False
+ENVIRONMENT=local
+SECRET_KEY='secret-key'
+ALLOWED_HOSTS=*
+APP_DOMAIN_NAME=localhost
+GENERIC_DOMAIN_NAME=localhost
+API_DOMAIN_NAME=localhost
+
+# Database
+DB_HOST='127.0.0.1'
+DB_PASSWORD='dev1'
+DB_NAME='the_blueprint'
+DB_USER='the_blueprint'
+DB_PORT=5432
+
+# Celery
+CELERY_RESULT_BACKEND='redis://127.0.0.1:6379/1'
+CELERY_BROKER_URL='redis://127.0.0.1:6379/2'
+CELERY_TASK_ALWAYS_EAGER=True
+
+# AWS
+AWS_STORAGE_BUCKET_NAME='the-blueprint-demo-documents'
+AWS_SECRET_ACCESS_KEY='aws-secret-access-key'
+AWS_ACCESS_KEY_ID='aws-access-key-id'
+AWS_REGION_NAME='us-east-1'
+
+# Email
+EMAIL_BACKEND='the-blueprint.common.mailer.backends.EmailToBrowserBackend'
+SENDGRID_API_KEY='sendgird-api-key'
+
+# Slack
+SLACK_EVENT_CHANNEL='#app-events'
+SLACK_BOT_TOKEN='slack-bot-token'
+SLACK_APP_ID='slack-app-id'
+SLACK_MOCK_CLIENT=True
+SLACK_CLIENT_ID='slack-client-id'
+SLACK_CLIENT_SECRET='slack-client-secret'
+SLACK_SIGNING_SECRET='slack-client-stuff'
+
+# Sentry
+SENTRY_DSN=''
+
+# Datadog
+DATADOG_API_KEY = ''
+
+# Use for deploys
+PROD_AWS_STORAGE_BUCKET_NAME='the-blueprint-prod'
+PROD_AWS_DB_BACKUPS_BUCKET_NAME='the-blueprint-backups'
+PROD_AWS_SECRET_ACCESS_KEY='prod-aws-secret-access-key'
+PROD_AWS_ACCESS_KEY_ID='aws-access-key-id'
+PROD_AWS_REGION_NAME='us-east-1'
+PROD_CLOUDFRONT_DIST_ID='XXXXXXXXXX'

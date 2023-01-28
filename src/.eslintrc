@@ -1,0 +1,63 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:mdx/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".mdx"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "comma-dangle": "off",
+    "no-plusplus": "off",
+    "import/no-unresolved": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-underscore-dangle": "off",
+    "react/state-in-constructor": "off",
+    "react/no-unescaped-entities": "off",
+    "mdx/no-unescaped-entities": "off",
+    "react/jsx-one-expression-per-line": "off",
+     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}

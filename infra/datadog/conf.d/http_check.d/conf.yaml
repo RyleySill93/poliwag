@@ -1,0 +1,5 @@
+init_config:
+
+instances:
+  - name: poliwag API
+    url: https://api.poliwag.com/status/

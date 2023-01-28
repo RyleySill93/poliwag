@@ -1,0 +1,8 @@
+init_config:
+
+instances:
+  - dbm: true
+    host: 'database.production.poliwag.com'
+    port: 5432
+    username: datadog
+    password: '{PASSWORD}'
