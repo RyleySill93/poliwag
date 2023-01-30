@@ -1,6 +1,6 @@
 {
-  "name": "tap",
-  "author": "Tap",
+  "name": "poliwag",
+  "author": "Poliwag",
   "email": "",
   "licence": "UNLICENSED",
   "version": "2.0.0",
@@ -115,8 +115,7 @@
     "mdx-loader": "^3.0.2",
     "prettier": "^1.19.1"
   },
-  "engines": {
-    "node": "14.6.0",
-    "npm": "6.14.9"
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
   }
 }

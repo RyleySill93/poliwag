@@ -7,7 +7,7 @@ export default function Card(theme: Theme) {
     MuiCard: {
       styleOverrides: {
         root: {
-          boxShadow: theme.customShadows.z16,
+          boxShadow: theme.customShadows.primary,
           // @ts-ignore
           borderRadius: theme.shape.borderRadiusMd,
           position: 'relative',

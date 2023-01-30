@@ -10,7 +10,7 @@ export default function Button(theme: Theme) {
           '&:hover': {
             boxShadow: 'none',
           },
-          borderRadius: 14,
+          borderRadius: 9,
         },
         sizeLarge: {
           height: 48
@@ -21,12 +21,6 @@ export default function Button(theme: Theme) {
           '&:hover': {
             backgroundColor: theme.palette.grey[400]
           }
-        },
-        containedPrimary: {
-          boxShadow: theme.customShadows.primary
-        },
-        containedSecondary: {
-          boxShadow: theme.customShadows.secondary
         },
         outlinedInherit: {
           border: `1px solid ${theme.palette.grey[500_32]}`,

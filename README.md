@@ -1,3 +1,8 @@
+### Create a new Poliwag:
+- Find and replace poliwag -> yourprojectname and Poliwag -> Yourprojectname
+- Update favicon-32x32.png to your favicon
+- Update logo.svg to your logo
+
 ### Setting up environment for first time
 - install:
   - python (3.9.4)

@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  Box,
   InputAdornment,
+  Typography,
 } from '@mui/material';
 import { InputProps as StandardInputProps } from '@mui/material/Input/Input';
 
@@ -20,6 +22,7 @@ export type TextFieldProps = MuiTextFieldProps & {
 
 const TextField = ({
   mask,
+  label,
   ...props
 }: TextFieldProps) => {
   const inputProps: StandardInputProps = {
@@ -53,13 +56,19 @@ const TextField = ({
   }
 
   return (
-    <MuiTextField
-      variant="outlined"
-      fullWidth
-      {...props}
-      required={false}
-      InputProps={inputProps}
-    />
+    <Box display="flex" flexDirection="column">
+      <Typography variant="subtitle2" color="textSecondary">
+        {label}
+      </Typography>
+      <MuiTextField
+        variant="outlined"
+        margin="dense"
+        fullWidth
+        {...props}
+        required={false}
+        InputProps={inputProps}
+      />
+    </Box>
   );
 };
 

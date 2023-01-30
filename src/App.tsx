@@ -8,9 +8,6 @@ import useUser from './hooks/useUser';
 import Loader from './components/Loader';
 
 export default function App() {
-
-  return <div>hi</div>
-  debugger;
   const { userIsLoading } = useUser();
 
   return (

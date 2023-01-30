@@ -15,7 +15,9 @@ const Routes = () => {
     },
   ];
 
-  return useRoutes(routes.filter(({ isHidden }) => !isHidden));
+  const nonHiddenRoutes = routes.filter(({ isHidden }) => !isHidden);
+
+  return useRoutes(nonHiddenRoutes);
 };
 
 export default Routes;

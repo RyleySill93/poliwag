@@ -9,13 +9,16 @@ export default function Input(theme: Theme) {
         root: {
           '&.Mui-disabled': {
             '& svg': { color: theme.palette.text.disabled }
-          }
+          },
         },
         input: {
           '&::placeholder': {
             opacity: 1,
             color: theme.palette.text.disabled
-          }
+          },
+        },
+        formControl: {
+          borderRadius: '9px !important',
         }
       }
     },
@@ -25,7 +28,7 @@ export default function Input(theme: Theme) {
           '&:before': {
             borderBottomColor: theme.palette.grey[500_56]
           }
-        }
+        },
       }
     },
     MuiFilledInput: {
@@ -53,15 +56,26 @@ export default function Input(theme: Theme) {
       styleOverrides: {
         root: {
           '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: theme.palette.grey[500_32]
+            borderColor: 'transparent',
+            backgroundColor: theme.palette.grey[500_12],
+            '&:hover': {
+              borderColor: 'red !important'
+            },
+            transition: theme.transitions.create('borderColor', {
+              easing: theme.transitions.easing.sharp,
+              duration: theme.transitions.duration.leavingScreen
+            }),
           },
           '&.Mui-disabled': {
             '& .MuiOutlinedInput-notchedOutline': {
               borderColor: theme.palette.action.disabledBackground
             }
-          }
+          },
+        },
+        input: {
+          padding: '10px 38px 10px 10px',
         }
       }
-    }
+    },
   };
 }
